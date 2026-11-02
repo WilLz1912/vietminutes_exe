@@ -1,0 +1,853 @@
+{
+ "sprint": {
+  "id": "sprint",
+  "defaultTitle": "Sprint Planning #14 – App Giao Hàng",
+  "templateId": "sprint",
+  "info": {
+   "purpose": "Lập kế hoạch Sprint 14, mục tiêu phát hành phiên bản 2.3 với tính năng theo dõi đơn hàng theo thời gian thực.",
+   "startTime": "14:00",
+   "chair": "Anh Minh",
+   "secretary": "",
+   "location": "Họp trực tuyến (Google Meet)",
+   "attendees": ""
+  },
+  "speakers": [
+   {
+    "id": "s1",
+    "label": "Speaker 1",
+    "name": "",
+    "suggested": "Anh Minh",
+    "evidence": "g13"
+   },
+   {
+    "id": "s2",
+    "label": "Speaker 2",
+    "name": "",
+    "suggested": "Nam",
+    "evidence": "g3"
+   },
+   {
+    "id": "s3",
+    "label": "Speaker 3",
+    "name": "",
+    "suggested": "Linh",
+    "evidence": "g7"
+   },
+   {
+    "id": "s4",
+    "label": "Speaker 4",
+    "name": "",
+    "suggested": "Chị Hà",
+    "evidence": "g7"
+   }
+  ],
+  "segments": [
+   {
+    "id": "g1",
+    "speakerId": "s1",
+    "start": 0,
+    "end": 18,
+    "text": "Ok mọi người, mình bắt đầu sprint planning số 14 nhé. Mục tiêu sprint này là release được bản 2.3 cho app giao hàng, tập trung vào tính năng theo dõi đơn real-time."
+   },
+   {
+    "id": "g2",
+    "speakerId": "s2",
+    "start": 18,
+    "end": 34,
+    "text": "Bên backend thì API tracking em làm xong khoảng 70% rồi, còn phần WebSocket push vị trí shipper. Em ước tính cần thêm khoảng 3 ngày."
+   },
+   {
+    "id": "g3",
+    "speakerId": "s1",
+    "start": 34,
+    "end": 42,
+    "text": "3 ngày thì ổn. Vậy Nam chốt deadline API tracking là thứ Năm tuần này, ngày 30 nhé."
+   },
+   {
+    "id": "g4",
+    "speakerId": "s2",
+    "start": 42,
+    "end": 47,
+    "text": "Dạ ok anh, thứ Năm em xong."
+   },
+   {
+    "id": "g5",
+    "speakerId": "s3",
+    "start": 47,
+    "end": 66,
+    "text": "Về phía mobile, màn hình bản đồ em đang bị chậm trên máy Android đời cũ, load map mất gần 4 giây. Em nghĩ nên chuyển sang dùng lazy load cho marker."
+   },
+   {
+    "id": "g6",
+    "speakerId": "s4",
+    "start": 66,
+    "end": 80,
+    "text": "Chị thấy lazy load hợp lý. Nhưng mình cần test lại trên mấy máy cấu hình thấp, bên QA có sẵn 3 máy test."
+   },
+   {
+    "id": "g7",
+    "speakerId": "s1",
+    "start": 80,
+    "end": 95,
+    "text": "Được, vậy mình chốt là dùng lazy load cho marker trên màn hình bản đồ. Linh lo phần này, còn chị Hà bên QA test performance sau khi Linh merge."
+   },
+   {
+    "id": "g8",
+    "speakerId": "s3",
+    "start": 95,
+    "end": 104,
+    "text": "Em làm xong chắc tầm đầu tuần sau, nhưng còn phụ thuộc API của anh Nam nữa."
+   },
+   {
+    "id": "g9",
+    "speakerId": "s4",
+    "start": 104,
+    "end": 115,
+    "text": "Chị sẽ viết test case cho luồng tracking trước, khi nào có build thì chạy luôn."
+   },
+   {
+    "id": "g10",
+    "speakerId": "s1",
+    "start": 115,
+    "end": 131,
+    "text": "Còn một việc nữa là cái bug thanh toán VNPay hôm trước khách report, bị trừ tiền hai lần. Cái này priority cao nhất, phải fix trước khi release."
+   },
+   {
+    "id": "g11",
+    "speakerId": "s2",
+    "start": 131,
+    "end": 146,
+    "text": "Em check log rồi, nguyên nhân là callback bị gọi lại khi timeout. Em sẽ thêm idempotency key, chắc làm trong hôm nay hoặc mai là xong."
+   },
+   {
+    "id": "g12",
+    "speakerId": "s1",
+    "start": 146,
+    "end": 158,
+    "text": "Tốt, Nam fix luôn bug VNPay, xong báo anh review. Mình sẽ không release 2.3 nếu bug này chưa đóng."
+   },
+   {
+    "id": "g13",
+    "speakerId": "s4",
+    "start": 158,
+    "end": 166,
+    "text": "Thế còn tính năng đánh giá shipper, có đưa vào sprint này không anh Minh?"
+   },
+   {
+    "id": "g14",
+    "speakerId": "s1",
+    "start": 166,
+    "end": 180,
+    "text": "Cái đó để sprint sau đi, sprint này scope đã khá nặng rồi. Mình cần confirm thêm với bên business về tiêu chí đánh giá."
+   },
+   {
+    "id": "g15",
+    "speakerId": "s3",
+    "start": 180,
+    "end": 192,
+    "text": "Em đề xuất mình có buổi sync nhanh với bên design về icon trạng thái đơn, hiện đang chưa thống nhất."
+   },
+   {
+    "id": "g16",
+    "speakerId": "s1",
+    "start": 192,
+    "end": 212,
+    "text": "Ừ, Linh sắp xếp buổi đó giúp anh, cuối tuần cũng được. Ok, vậy mình tổng kết lại: release 2.3 dự kiến thứ Ba tuần sau nếu QA pass hết. Cảm ơn mọi người."
+   }
+  ],
+  "minutes": {
+   "summary": [
+    {
+     "id": "m1",
+     "text": "Nam (Backend) báo cáo API tracking đã hoàn thành khoảng 70%, phần còn lại là WebSocket đẩy vị trí shipper, cần thêm khoảng 3 ngày.",
+     "sources": [
+      "g2"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Tiến độ tính năng theo dõi đơn hàng"
+    },
+    {
+     "id": "m2",
+     "text": "Linh (Mobile) cho biết màn hình bản đồ tải chậm trên các máy Android đời cũ (gần 4 giây) và đề xuất chuyển sang lazy load cho marker. Chị Hà (QA) đồng ý, đề nghị kiểm thử lại trên 3 máy cấu hình thấp của QA.",
+     "sources": [
+      "g5",
+      "g6"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Tiến độ tính năng theo dõi đơn hàng"
+    },
+    {
+     "id": "m3",
+     "text": "Khách hàng phản ánh bị trừ tiền hai lần khi thanh toán qua VNPay. Nam đã kiểm tra log, nguyên nhân là callback bị gọi lại khi timeout; hướng xử lý là bổ sung idempotency key.",
+     "sources": [
+      "g10",
+      "g11"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Lỗi thanh toán VNPay"
+    },
+    {
+     "id": "m4",
+     "text": "Chị Hà hỏi về việc đưa tính năng đánh giá shipper vào sprint này. Anh Minh cho rằng phạm vi sprint đã khá nặng và cần thống nhất tiêu chí đánh giá với bộ phận business trước.",
+     "sources": [
+      "g13",
+      "g14"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Phạm vi sprint"
+    },
+    {
+     "id": "m5",
+     "text": "Linh đề xuất họp nhanh với team design để thống nhất bộ icon trạng thái đơn.",
+     "sources": [
+      "g15"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Phạm vi sprint"
+    }
+   ],
+   "decisions": [
+    {
+     "id": "d1",
+     "text": "Áp dụng lazy load cho marker trên màn hình bản đồ.",
+     "sources": [
+      "g7"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "d2",
+     "text": "Lỗi VNPay là ưu tiên cao nhất; chỉ phát hành bản 2.3 khi lỗi này đã được xử lý xong.",
+     "sources": [
+      "g10",
+      "g12"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "d3",
+     "text": "Tính năng đánh giá shipper chuyển sang sprint sau.",
+     "sources": [
+      "g14"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "d4",
+     "text": "Dự kiến phát hành bản 2.3 vào thứ Ba tuần sau, với điều kiện QA kiểm thử đạt toàn bộ.",
+     "sources": [
+      "g16"
+     ],
+     "confidence": "low",
+     "note": "Ngày phát hành có điều kiện (phụ thuộc kết quả QA).",
+     "confirmed": false
+    }
+   ],
+   "actions": [
+    {
+     "id": "a1",
+     "text": "Hoàn thiện API tracking (WebSocket đẩy vị trí shipper)",
+     "sources": [
+      "g3",
+      "g4"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Nam",
+     "deadline": "Thứ Năm, 30/10"
+    },
+    {
+     "id": "a2",
+     "text": "Sửa lỗi trừ tiền hai lần khi thanh toán VNPay (bổ sung idempotency key), gửi anh Minh review",
+     "sources": [
+      "g11",
+      "g12"
+     ],
+     "confidence": "low",
+     "note": "Người nói chỉ ước lượng \"hôm nay hoặc mai\", chưa chốt ngày.",
+     "confirmed": false,
+     "owner": "Nam",
+     "deadline": "Hôm nay hoặc ngày mai"
+    },
+    {
+     "id": "a3",
+     "text": "Áp dụng lazy load cho marker màn hình bản đồ",
+     "sources": [
+      "g7",
+      "g8"
+     ],
+     "confidence": "low",
+     "note": "Thời hạn phụ thuộc API tracking của Nam.",
+     "confirmed": false,
+     "owner": "Linh",
+     "deadline": "Đầu tuần sau"
+    },
+    {
+     "id": "a4",
+     "text": "Viết test case luồng tracking; kiểm thử hiệu năng sau khi Linh merge",
+     "sources": [
+      "g7",
+      "g9"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Chị Hà",
+     "deadline": "Khi có bản build"
+    },
+    {
+     "id": "a5",
+     "text": "Sắp xếp buổi trao đổi với team design về icon trạng thái đơn",
+     "sources": [
+      "g15",
+      "g16"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Linh",
+     "deadline": "Cuối tuần này"
+    }
+   ],
+   "openIssues": [
+    {
+     "id": "o1",
+     "text": "Tiêu chí đánh giá shipper: cần thống nhất với bộ phận business trước khi đưa vào sprint.",
+     "sources": [
+      "g14"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "o2",
+     "text": "Bộ icon trạng thái đơn chưa thống nhất giữa dev và design.",
+     "sources": [
+      "g15"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    }
+   ]
+  }
+ },
+ "client": {
+  "id": "client",
+  "defaultTitle": "Họp khách hàng – Chiến dịch Tết Ngọc Lan Cosmetics",
+  "templateId": "client",
+  "info": {
+   "purpose": "Trao đổi proposal chiến dịch Tết 2027 với Ngọc Lan Cosmetics: ngân sách KOL, timeline và cách báo cáo.",
+   "startTime": "10:00",
+   "chair": "Tuấn",
+   "secretary": "",
+   "location": "Văn phòng Ngọc Lan Cosmetics",
+   "attendees": ""
+  },
+  "speakers": [
+   {
+    "id": "s1",
+    "label": "Speaker 1",
+    "name": "",
+    "suggested": "Tuấn",
+    "evidence": "g4"
+   },
+   {
+    "id": "s2",
+    "label": "Speaker 2",
+    "name": "",
+    "suggested": "Chị Lan",
+    "evidence": "g1"
+   },
+   {
+    "id": "s3",
+    "label": "Speaker 3",
+    "name": ""
+   }
+  ],
+  "segments": [
+   {
+    "id": "g1",
+    "speakerId": "s1",
+    "start": 0,
+    "end": 14,
+    "text": "Em chào chị Lan, hôm nay bên em gửi chị bản proposal chiến dịch Tết, tập trung vào TikTok và KOL tầm trung."
+   },
+   {
+    "id": "g2",
+    "speakerId": "s2",
+    "start": 14,
+    "end": 30,
+    "text": "Chị đọc rồi. Nhìn chung concept \"Tết rạng rỡ\" chị thích, nhưng budget KOL đang hơi cao, khoảng 60% tổng ngân sách."
+   },
+   {
+    "id": "g3",
+    "speakerId": "s3",
+    "start": 30,
+    "end": 44,
+    "text": "Dạ, bên em có thể giảm xuống còn khoảng 45% và chuyển phần còn lại sang ads chuyển đổi trên TikTok Shop."
+   },
+   {
+    "id": "g4",
+    "speakerId": "s2",
+    "start": 44,
+    "end": 56,
+    "text": "Ok, chị đồng ý phương án 45%. Nhưng Tuấn gửi chị danh sách KOL cụ thể trước khi chị duyệt nhé."
+   },
+   {
+    "id": "g5",
+    "speakerId": "s1",
+    "start": 56,
+    "end": 68,
+    "text": "Dạ vâng, em gửi chị shortlist 10 KOL kèm số liệu engagement trước thứ Sáu này nhé."
+   },
+   {
+    "id": "g6",
+    "speakerId": "s2",
+    "start": 68,
+    "end": 82,
+    "text": "Được. Thêm nữa, timeline chị muốn chạy sớm hơn, khoảng 15 tháng Một là phải lên bài đầu tiên."
+   },
+   {
+    "id": "g7",
+    "speakerId": "s3",
+    "start": 82,
+    "end": 95,
+    "text": "15/1 thì hơi gấp cho phần quay video, nhưng nếu chị duyệt KOL trong tuần sau thì bên em kịp."
+   },
+   {
+    "id": "g8",
+    "speakerId": "s2",
+    "start": 95,
+    "end": 110,
+    "text": "Vậy mình chốt ngày go-live là 15/1 nhé. Còn phần báo cáo thì chị cần report theo tuần, có số liệu doanh thu từ TikTok Shop."
+   },
+   {
+    "id": "g9",
+    "speakerId": "s1",
+    "start": 110,
+    "end": 122,
+    "text": "Dạ, bên em sẽ làm dashboard report hàng tuần. Còn phần quyền truy cập TikTok Shop thì chị cấp cho bên em giúp em."
+   },
+   {
+    "id": "g10",
+    "speakerId": "s2",
+    "start": 122,
+    "end": 131,
+    "text": "Ừ, để chị nhờ bạn bên IT cấp quyền, chắc trong tuần này."
+   },
+   {
+    "id": "g11",
+    "speakerId": "s3",
+    "start": 131,
+    "end": 144,
+    "text": "Một điểm nữa là chị có muốn làm thêm minigame trên fanpage không ạ? Bên em thấy năm ngoái minigame kéo được khá nhiều follow."
+   },
+   {
+    "id": "g12",
+    "speakerId": "s2",
+    "start": 144,
+    "end": 156,
+    "text": "Cái này chị phải hỏi lại sếp, chưa chốt được. Em cứ gửi chị ước tính chi phí trước."
+   },
+   {
+    "id": "g13",
+    "speakerId": "s1",
+    "start": 156,
+    "end": 176,
+    "text": "Dạ vâng ạ. Em tổng kết lại các đầu việc và gửi biên bản cho chị trong hôm nay."
+   }
+  ],
+  "minutes": {
+   "summary": [
+    {
+     "id": "m1",
+     "text": "Agency trình bày proposal chiến dịch Tết tập trung vào TikTok và KOL tầm trung. Chị Lan đồng ý với concept \"Tết rạng rỡ\" nhưng cho rằng ngân sách KOL (khoảng 60% tổng ngân sách) còn cao.",
+     "sources": [
+      "g1",
+      "g2"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Proposal và ngân sách"
+    },
+    {
+     "id": "m2",
+     "text": "Agency đề xuất giảm ngân sách KOL xuống khoảng 45%, phần còn lại chuyển sang quảng cáo chuyển đổi trên TikTok Shop.",
+     "sources": [
+      "g3"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Proposal và ngân sách"
+    },
+    {
+     "id": "m3",
+     "text": "Chị Lan muốn chiến dịch lên bài đầu tiên vào khoảng 15/01. Agency cho biết thời gian quay video khá gấp nhưng vẫn kịp nếu danh sách KOL được duyệt trong tuần sau.",
+     "sources": [
+      "g6",
+      "g7"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Timeline"
+    },
+    {
+     "id": "m4",
+     "text": "Chị Lan yêu cầu báo cáo theo tuần, có số liệu doanh thu từ TikTok Shop; agency cần được cấp quyền truy cập TikTok Shop.",
+     "sources": [
+      "g8",
+      "g9"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Báo cáo"
+    }
+   ],
+   "decisions": [
+    {
+     "id": "d1",
+     "text": "Giảm ngân sách KOL xuống 45%, phần còn lại dành cho quảng cáo chuyển đổi trên TikTok Shop.",
+     "sources": [
+      "g3",
+      "g4"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "d2",
+     "text": "Ngày go-live chiến dịch: 15/01.",
+     "sources": [
+      "g8"
+     ],
+     "confidence": "low",
+     "note": "Agency nêu điều kiện là KOL phải được duyệt trong tuần sau.",
+     "confirmed": false
+    }
+   ],
+   "actions": [
+    {
+     "id": "a1",
+     "text": "Gửi shortlist 10 KOL kèm số liệu engagement",
+     "sources": [
+      "g4",
+      "g5"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Tuấn",
+     "deadline": "Thứ Sáu tuần này"
+    },
+    {
+     "id": "a2",
+     "text": "Duyệt danh sách KOL",
+     "sources": [
+      "g7"
+     ],
+     "confidence": "low",
+     "note": "Thời hạn do agency đề xuất, chị Lan chưa xác nhận trực tiếp.",
+     "confirmed": false,
+     "owner": "Chị Lan",
+     "deadline": "Tuần sau"
+    },
+    {
+     "id": "a3",
+     "text": "Xây dựng dashboard báo cáo hàng tuần",
+     "sources": [
+      "g9"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Tuấn",
+     "deadline": "Chưa xác định"
+    },
+    {
+     "id": "a4",
+     "text": "Cấp quyền truy cập TikTok Shop cho agency",
+     "sources": [
+      "g9",
+      "g10"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Chị Lan",
+     "deadline": "Trong tuần này"
+    },
+    {
+     "id": "a5",
+     "text": "Gửi ước tính chi phí minigame trên fanpage",
+     "sources": [
+      "g11",
+      "g12"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Speaker 3",
+     "deadline": "Chưa xác định"
+    }
+   ],
+   "openIssues": [
+    {
+     "id": "o1",
+     "text": "Minigame trên fanpage: chị Lan cần hỏi ý kiến cấp trên trước khi quyết định.",
+     "sources": [
+      "g12"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    }
+   ]
+  }
+ },
+ "weekly": {
+  "id": "weekly",
+  "defaultTitle": "Giao ban tuần 43 – Phòng Vận hành",
+  "templateId": "weekly",
+  "info": {
+   "purpose": "Giao ban tuần 43: các bộ phận báo cáo tình hình và thống nhất việc cần làm trong tuần.",
+   "startTime": "08:30",
+   "chair": "Anh Quân",
+   "secretary": "",
+   "location": "Phòng họp tầng 3",
+   "attendees": ""
+  },
+  "speakers": [
+   {
+    "id": "s1",
+    "label": "Speaker 1",
+    "name": "",
+    "suggested": "Anh Quân",
+    "evidence": "g10"
+   },
+   {
+    "id": "s2",
+    "label": "Speaker 2",
+    "name": "",
+    "suggested": "Mai",
+    "evidence": "g9"
+   },
+   {
+    "id": "s3",
+    "label": "Speaker 3",
+    "name": "",
+    "suggested": "Tuấn",
+    "evidence": "g4"
+   },
+   {
+    "id": "s4",
+    "label": "Speaker 4",
+    "name": ""
+   }
+  ],
+  "segments": [
+   {
+    "id": "g1",
+    "speakerId": "s1",
+    "start": 0,
+    "end": 10,
+    "text": "Bắt đầu giao ban tuần 43. Từng bộ phận báo cáo nhanh giúp anh, mỗi người tầm 2 phút."
+   },
+   {
+    "id": "g2",
+    "speakerId": "s2",
+    "start": 10,
+    "end": 27,
+    "text": "Bên CSKH tuần này nhận 420 ticket, tăng 15% so với tuần trước, chủ yếu do lỗi đăng nhập sau bản update. SLA phản hồi vẫn đạt 92%."
+   },
+   {
+    "id": "g3",
+    "speakerId": "s3",
+    "start": 27,
+    "end": 44,
+    "text": "Bên kho thì tồn kho đang ổn, nhưng có 2 đơn nhập hàng từ nhà cung cấp bị chậm 5 ngày, ảnh hưởng tới hàng khuyến mãi 11/11."
+   },
+   {
+    "id": "g4",
+    "speakerId": "s1",
+    "start": 44,
+    "end": 58,
+    "text": "Đơn chậm này phải xử lý gấp. Tuấn liên hệ lại nhà cung cấp, nếu đến thứ Tư chưa có hàng thì chuyển sang nhà cung cấp dự phòng."
+   },
+   {
+    "id": "g5",
+    "speakerId": "s3",
+    "start": 58,
+    "end": 62,
+    "text": "Dạ em gọi luôn chiều nay."
+   },
+   {
+    "id": "g6",
+    "speakerId": "s4",
+    "start": 62,
+    "end": 78,
+    "text": "Bên nhân sự thì đang tuyển 3 bạn CSKH part-time cho mùa sale, đã có 12 CV, dự kiến phỏng vấn trong tuần."
+   },
+   {
+    "id": "g7",
+    "speakerId": "s1",
+    "start": 78,
+    "end": 88,
+    "text": "Ok. Chốt là ưu tiên tuyển đủ 3 bạn trước ngày 5/11 để kịp training."
+   },
+   {
+    "id": "g8",
+    "speakerId": "s2",
+    "start": 88,
+    "end": 99,
+    "text": "Về lỗi đăng nhập, em đề xuất mình làm một bài hướng dẫn và gửi cho khách qua email để giảm ticket."
+   },
+   {
+    "id": "g9",
+    "speakerId": "s1",
+    "start": 99,
+    "end": 112,
+    "text": "Được, Mai làm bài hướng dẫn, gửi anh duyệt rồi gửi khách. Còn bên tech thì anh sẽ nhắc trực tiếp."
+   },
+   {
+    "id": "g10",
+    "speakerId": "s4",
+    "start": 112,
+    "end": 120,
+    "text": "Anh Quân ơi, còn vụ thưởng KPI quý 3 thì bao giờ chốt ạ? Nhân viên đang hỏi nhiều."
+   },
+   {
+    "id": "g11",
+    "speakerId": "s1",
+    "start": 120,
+    "end": 140,
+    "text": "Cái này anh cần họp với ban giám đốc đã, chưa trả lời được trong buổi này."
+   }
+  ],
+  "minutes": {
+   "summary": [
+    {
+     "id": "m1",
+     "text": "Mai báo cáo CSKH nhận 420 ticket trong tuần, tăng 15% so với tuần trước, chủ yếu do lỗi đăng nhập sau bản cập nhật; SLA phản hồi vẫn đạt 92%.",
+     "sources": [
+      "g2"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Chăm sóc khách hàng"
+    },
+    {
+     "id": "m2",
+     "text": "Tuấn báo cáo tồn kho ổn định, tuy nhiên 2 đơn nhập hàng từ nhà cung cấp bị chậm 5 ngày, ảnh hưởng tới hàng khuyến mãi 11/11.",
+     "sources": [
+      "g3"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Kho vận"
+    },
+    {
+     "id": "m3",
+     "text": "Bộ phận nhân sự đang tuyển 3 nhân viên CSKH part-time cho mùa sale, đã nhận 12 CV và dự kiến phỏng vấn trong tuần.",
+     "sources": [
+      "g6"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "topic": "Nhân sự"
+    }
+   ],
+   "decisions": [
+    {
+     "id": "d1",
+     "text": "Nếu đến thứ Tư chưa nhận được hàng, chuyển sang nhà cung cấp dự phòng.",
+     "sources": [
+      "g4"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "d2",
+     "text": "Ưu tiên tuyển đủ 3 nhân viên CSKH part-time trước ngày 05/11 để kịp đào tạo.",
+     "sources": [
+      "g7"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    },
+    {
+     "id": "d3",
+     "text": "Soạn bài hướng dẫn xử lý lỗi đăng nhập và gửi cho khách hàng qua email để giảm số ticket.",
+     "sources": [
+      "g8",
+      "g9"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    }
+   ],
+   "actions": [
+    {
+     "id": "a1",
+     "text": "Liên hệ nhà cung cấp về 2 đơn nhập hàng bị chậm",
+     "sources": [
+      "g4",
+      "g5"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Tuấn",
+     "deadline": "Chiều nay"
+    },
+    {
+     "id": "a2",
+     "text": "Tuyển đủ 3 nhân viên CSKH part-time",
+     "sources": [
+      "g6",
+      "g7"
+     ],
+     "confidence": "low",
+     "note": "Chưa xác định được tên người phụ trách bên nhân sự.",
+     "confirmed": false,
+     "owner": "Speaker 4 (Nhân sự)",
+     "deadline": "05/11"
+    },
+    {
+     "id": "a3",
+     "text": "Soạn bài hướng dẫn lỗi đăng nhập, gửi anh Quân duyệt rồi gửi khách hàng",
+     "sources": [
+      "g9"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Mai",
+     "deadline": "Chưa xác định"
+    },
+    {
+     "id": "a4",
+     "text": "Trao đổi với team tech về lỗi đăng nhập",
+     "sources": [
+      "g9"
+     ],
+     "confidence": "high",
+     "confirmed": true,
+     "owner": "Anh Quân",
+     "deadline": "Chưa xác định"
+    }
+   ],
+   "openIssues": [
+    {
+     "id": "o1",
+     "text": "Thưởng KPI quý 3: chờ anh Quân họp với ban giám đốc.",
+     "sources": [
+      "g10",
+      "g11"
+     ],
+     "confidence": "high",
+     "confirmed": true
+    }
+   ]
+  }
+ }
+}
