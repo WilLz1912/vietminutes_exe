@@ -34,7 +34,9 @@ Web App trước; Chrome Extension Google Meet ở vòng 3. Beachhead: công ty 
 - Giới hạn giả lập phải biết khi trình bày: `stt.mock` bỏ qua audio, file/giọng nào cũng ra kịch bản có sẵn. `demo/sample.wav` là tiếng bíp 20s (không phải giọng nói),
   nên "Nghe câu gốc" không khớp lời thoại.
 - Upload chỉ nhận mp3/wav/m4a/webm: bản ghi Google Meet dạng mp4 chưa tải trực tiếp được.
-- Cả `D:\EXE` chưa commit (git root là `D:\`, thư mục untracked) → chưa có bản sao lưu qua git.
+- Git riêng ở `D:\EXE` (3/11), remote https://github.com/WilLz1912/vietminutes_exe (main). `.claude/` không đưa lên (đường dẫn hook cá nhân).
+- Vercel (3/11): https://web-henna-one-26.vercel.app — project `web` (tài khoản quang191204-8665), chỉ deploy `web/`, chế độ giả lập (AI service không lên Vercel).
+  Chưa nối GitHub (lỗi: tài khoản Vercel chưa có Login Connection GitHub) → giờ deploy lại bằng `cd web && npx vercel --prod`; nếu nối repo phải đặt Root Directory = `web`.
 
 ## Web demo (`web/`)
 Yêu cầu Quang: giao diện chạy được trên localhost, bấm được mọi nút/luồng.
