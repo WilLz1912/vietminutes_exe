@@ -86,7 +86,7 @@ with sync_playwright() as p:
     scroll(700, 14)
     cap("Bảo mật: mỗi cuộc họp xử lý trong hộp riêng, hộp bị hủy ngay khi có kết quả", 2500)
     scroll(700, 14)
-    cap("Bảng giá: Free 3 biên bản/tháng, Premium 1.049.000đ/năm (ưu đãi năm đầu)", 2500)
+    cap("Bảng giá: Free 3 biên bản/tháng · Premium 199.000đ/tháng hoặc 1.590.000đ năm đầu", 2500)
     pg.mouse.wheel(0, -5000)
     wait(800)
 

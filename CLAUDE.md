@@ -1,4 +1,4 @@
-<!-- last-compacted: 2026-11-03T00:00 -->
+<!-- last-compacted: 2026-11-08T17:30 -->
 # EXE — VietMinutes (EXE101, Group 1)
 
 ## Cách ghi & làm gọn file này
@@ -37,7 +37,9 @@ Web App trước; Chrome Extension Google Meet ở vòng 3. Beachhead: công ty 
 - Upload chỉ nhận mp3/wav/m4a/webm: bản ghi Google Meet dạng mp4 chưa tải trực tiếp được.
 - Git riêng ở `D:\EXE` (3/11), remote https://github.com/WilLz1912/vietminutes_exe (main). `.claude/` không đưa lên (đường dẫn hook cá nhân).
 - Vercel (3/11): https://web-henna-one-26.vercel.app — project `web` (tài khoản quang191204-8665), chỉ deploy `web/`, chế độ giả lập (AI service không lên Vercel).
-  Quang báo (8/11) đã nối GitHub: push lên `main` là Vercel tự deploy. Dự phòng: `cd web && npx vercel --prod` (Root Directory = `web`).
+  **GitHub CHƯA nối Vercel** (8/11: push `main` không tạo deploy nào dù Quang tưởng đã nối) → deploy bằng `cd web && npx vercel --prod --yes` (CLI đã login sẵn).
+  Muốn tự deploy: Vercel → project `web` → Settings → Git, nối repo, Root Directory = `web`. `vietminutes.vercel.app` trả 404 (có thể còn trống để đặt tên).
+  Ổ C từng đầy 100% (8/11) → npx lỗi ENOSPC; nếu tái diễn, đặt `npm_config_cache`, `TEMP`, `TMP` sang ổ D.
 
 ## Web demo (`web/`)
 Yêu cầu Quang: giao diện chạy được trên localhost, bấm được mọi nút/luồng.
@@ -77,11 +79,12 @@ Quang chốt (24/10): đưa ý tưởng "2 môi trường ảo tự hủy" vào 
 - COGS ước tính: Soniox ~$0.12/cuộc 60' (lãi gộp ~50%; trang giá 30/10 ghi async $0.10/giờ), Deepgram ~$0.35 (lỗ ở 15 cuộc/tháng) → nhà cung cấp STT quyết định giá. Khuyến nghị: Soniox + Gemini.
 
 ## Video demo
-- `demo/VietMinutes-demo.mp4` (2:17, có đoạn hướng dẫn, 1440×900, phụ đề tiếng Việt, không có tiếng, dùng giả lập). Quay lại: bật web + AI service rồi
+- `demo/VietMinutes-demo.mp4` (quay lại 8/11 với giá CP4; 2:17, có đoạn hướng dẫn, 1440×900, phụ đề tiếng Việt, không có tiếng, dùng giả lập). Quay lại: bật web + AI service rồi
   `python -I demo/record_demo.py <thư mục tạm> demo/sample.wav demo/VietMinutes-demo.mp4` (Playwright + Chrome máy, ffmpeg của imageio_ffmpeg).
 - Ảnh flow cho report (3/11, Quang yêu cầu cho đội MKT): `demo/anh-flow/` 21 ảnh đánh số, khung đỏ = chỗ bấm, kèm `00_Flow-su-dung_VietMinutes.docx` + `00_GHI-CHU.txt`.
   Chụp lại: bật web + AI service ở máy (bản Vercel không có AI service → nhật ký bảo mật trống) rồi `python -I demo/capture_flow.py demo/anh-flow demo/sample.wav http://localhost:3000`,
   sau đó `python -I demo/flow_notes.py demo/anh-flow` (lời ghi chú nằm trong file này).
+  8/11 đã chụp lại cả 21 ảnh với giá CP4 (chỉ ở máy; nhánh `anh-flow-cp4` và ảnh trong Doc RP vẫn là bản cũ).
 
 ## Bẫy
 - Scaffold Next 16 bật `cacheComponents` → build lỗi `usePathname()` ngoài Suspense; đã tắt trong `next.config.ts` (app chạy thuần client).
@@ -93,4 +96,4 @@ Quang chốt (24/10): đưa ý tưởng "2 môi trường ảo tự hủy" vào 
 ## Việc tiếp theo
 1. Có key Soniox + Gemini và file họp tiếng Việt thật → chạy thật lần đầu, sửa phần đọc kết quả nếu lệch, đánh giá chất lượng.
 2. Sửa 2 lỗi ở mục Trạng thái demo.
-3. CP4 chưa làm (Final Figma, video demo, BMC, tài chính Excel...).
+3. CP4: deck Canva `DAHaTTWG65I` đủ 29 slide (BMC 9 ô dựng bằng khối Canva), báo cáo tab RP, tài chính trên Google Sheet – còn chờ số khảo sát (slide 23–24) và link video demo (slide 28).
