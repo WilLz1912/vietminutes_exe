@@ -84,7 +84,7 @@ Quang chốt (24/10): đưa ý tưởng "2 môi trường ảo tự hủy" vào 
 - Ảnh flow cho report (3/11, Quang yêu cầu cho đội MKT): `demo/anh-flow/` 21 ảnh đánh số, khung đỏ = chỗ bấm, kèm `00_Flow-su-dung_VietMinutes.docx` + `00_GHI-CHU.txt`.
   Chụp lại: bật web + AI service ở máy (bản Vercel không có AI service → nhật ký bảo mật trống) rồi `python -I demo/capture_flow.py demo/anh-flow demo/sample.wav http://localhost:3000`,
   sau đó `python -I demo/flow_notes.py demo/anh-flow` (lời ghi chú nằm trong file này).
-  8/11 đã chụp lại cả 21 ảnh với giá CP4 (chỉ ở máy; nhánh `anh-flow-cp4` và ảnh trong Doc RP vẫn là bản cũ).
+  8/11 đã chụp lại cả 21 ảnh với giá CP4; ảnh 02_bang-gia mới đã lên nhánh `anh-flow-cp4` và thay trong Doc (tab RP Hình 8.2, tab Quang, tab "bản taa") bằng `replaceImage`.
 
 ## Bẫy
 - Scaffold Next 16 bật `cacheComponents` → build lỗi `usePathname()` ngoài Suspense; đã tắt trong `next.config.ts` (app chạy thuần client).
