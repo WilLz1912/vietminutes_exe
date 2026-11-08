@@ -34,6 +34,7 @@ const FAQ = [
   ["AI có tự gửi biên bản đi không?", "Không. Biên bản là bản nháp cho tới khi bạn xác nhận các chỗ được đánh dấu và bấm Duyệt."],
   ["Dữ liệu cuộc họp có bị dùng để huấn luyện AI?", "Không. Chỉ dùng dịch vụ API cam kết không lấy dữ liệu để huấn luyện. Bạn xóa dữ liệu bất kỳ lúc nào."],
   ["Gói Free có giới hạn gì?", "3 biên bản mỗi tháng, đủ tính năng chép lời, dẫn chiếu câu gốc và xuất file."],
+  ["Dùng hết 15 biên bản của gói Premium thì sao?", "Mua thêm theo tháng: 29.000đ cho 5 biên bản đầu, thêm 39.000đ cho 5 biên bản tiếp theo, tối đa 25 biên bản/tháng."],
 ];
 
 // Ảnh chụp thu nhỏ màn hình rà soát biên bản – minh họa đúng sản phẩm
@@ -223,16 +224,16 @@ export default function Landing() {
             <div className="flex items-center justify-between">
               <span className="font-semibold">Premium</span>
               <span className="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700">
-                {yearly ? "Giảm 10% năm đầu" : "Tháng đầu miễn phí"}
+                {yearly ? "Giảm 24% năm đầu" : "Tháng đầu miễn phí"}
               </span>
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-4xl font-semibold tracking-tight">{yearly ? vnd(1_049_000) : vnd(109_000)}</span>
+              <span className="text-4xl font-semibold tracking-tight">{yearly ? vnd(1_590_000) : vnd(199_000)}</span>
               <span className="text-sm text-gray-500">/{yearly ? "năm" : "tháng"} · doanh nghiệp</span>
             </div>
-            {yearly && <div className="mt-1 text-sm text-gray-500">Giá gốc <s>{vnd(1_159_000)}</s></div>}
+            {yearly && <div className="mt-1 text-sm text-gray-500">Giá gốc <s>{vnd(2_099_000)}</s></div>}
             <ul className="mt-6 space-y-2.5 text-[15px] text-gray-700">
-              {["15 biên bản mỗi tháng, vượt hạn mức tính thêm", "Chrome Extension cho Google Meet", "Hỗ trợ đưa mẫu Word của công ty lên", "Hỗ trợ qua Zalo trong giờ hành chính"].map((x) => (
+              {["15 biên bản mỗi tháng, mua thêm từ 29.000đ/5 biên bản", "Chrome Extension cho Google Meet", "Hỗ trợ đưa mẫu Word của công ty lên", "Hỗ trợ qua Zalo trong giờ hành chính"].map((x) => (
                 <li key={x} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 text-brand-600" />{x}</li>
               ))}
             </ul>

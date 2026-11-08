@@ -49,7 +49,7 @@ export function UpgradeDialog({ open, onClose }: { open: boolean; onClose: () =>
         Gói {plan === "free" ? "Free" : "Premium"} gồm {limit} biên bản/tháng và bạn đã dùng {used}/{limit}.
         {plan === "free"
           ? " Nâng cấp Premium để có 15 biên bản/tháng."
-          : " Biên bản vượt hạn mức sẽ được tính phí bổ sung (tính năng mua thêm lượt sẽ có trong bản chính thức)."}
+          : " Mua thêm: 29.000đ cho 5 biên bản đầu, 39.000đ cho 5 biên bản tiếp theo, tối đa 25 biên bản/tháng (tính năng mua thêm có trong bản chính thức)."}
       </p>
     </Modal>
   );

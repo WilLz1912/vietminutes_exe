@@ -9,8 +9,8 @@ import { useStore } from "@/lib/store";
 import { cn, vnd } from "@/lib/utils";
 
 const OPTIONS = {
-  yearly: { label: "Gói năm", price: 1_049_000, list: 1_159_000, note: "Giảm 10% năm đầu (ưu đãi 3 tháng ra mắt)", per: "năm" },
-  monthly: { label: "Gói tháng", price: 109_000, list: 109_000, note: "Miễn phí tháng đầu tiên", per: "tháng" },
+  yearly: { label: "Gói năm", price: 1_590_000, list: 2_099_000, note: "Giảm 24% năm đầu (ưu đãi ra mắt), từ năm sau 2.099.000đ", per: "năm" },
+  monthly: { label: "Gói tháng", price: 199_000, list: 199_000, note: "Miễn phí tháng đầu tiên", per: "tháng" },
 } as const;
 
 // Ô vuông giả lập mã QR thanh toán (không phải mã thật)
@@ -89,7 +89,8 @@ export default function BillingPage() {
             <table className="mt-3 w-full border-t border-gray-200 text-sm">
               <tbody>
                 {[
-                  ["Biên bản mỗi tháng", "3", "15, vượt thì tính thêm"],
+                  ["Biên bản mỗi tháng", "3", "15, mua thêm tối đa 25"],
+                  ["Mua thêm biên bản", "—", "5 đầu 29.000đ, 5 tiếp 39.000đ"],
                   ["Chép lời, dẫn chiếu câu gốc, xuất file", "Có", "Có"],
                   ["Chrome Extension cho Google Meet", "—", "Có"],
                   ["Đưa mẫu Word của công ty lên", "—", "Đội hỗ trợ làm giúp"],

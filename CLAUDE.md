@@ -19,8 +19,9 @@ Web App trước; Chrome Extension Google Meet ở vòng 3. Beachhead: công ty 
 
 ## Quy tắc của Quang
 - CP không tin ngang nhau: **CP sau thắng**, hoặc theo cái hợp logic hơn; tự chốt chỗ lệch, đừng liệt kê hết.
-- Chốt đã dùng: giá Free 3 biên bản/tháng; Premium 1.159.000đ/năm (giảm 10% năm đầu = 1.049.000đ) hoặc 109.000đ/tháng
-  (tháng đầu miễn phí), 15 biên bản/tháng, tính theo doanh nghiệp. Con số "20%" trong bảng CP3 là lỗi gõ.
+- Giá chốt CP4 (8/11, theo sheet tài chính + RP): Free 3 biên bản/tháng; Premium 199.000đ/tháng (tháng đầu miễn phí) hoặc 2.099.000đ/năm
+  (năm đầu 1.590.000đ, giảm 24%), 15 biên bản/tháng, tính theo doanh nghiệp; mua thêm 29.000đ/5 biên bản đầu + 39.000đ/5 tiếp, tối đa 25/tháng.
+  Web đã cập nhật ở landing, /billing, hộp hết hạn mức. (Giá cũ CP3 109k/tháng, 1.159k/năm đã bỏ.)
 - Team (CP3): Hiền CEO 25%; Linh AI; **Quang Web App**; Hoàng Extension; Kiệt Marketing; Bình Sales – mỗi người 15%.
 
 ## Trạng thái demo (kiểm tra thực tế 30/10)
@@ -36,7 +37,7 @@ Web App trước; Chrome Extension Google Meet ở vòng 3. Beachhead: công ty 
 - Upload chỉ nhận mp3/wav/m4a/webm: bản ghi Google Meet dạng mp4 chưa tải trực tiếp được.
 - Git riêng ở `D:\EXE` (3/11), remote https://github.com/WilLz1912/vietminutes_exe (main). `.claude/` không đưa lên (đường dẫn hook cá nhân).
 - Vercel (3/11): https://web-henna-one-26.vercel.app — project `web` (tài khoản quang191204-8665), chỉ deploy `web/`, chế độ giả lập (AI service không lên Vercel).
-  Chưa nối GitHub (lỗi: tài khoản Vercel chưa có Login Connection GitHub) → giờ deploy lại bằng `cd web && npx vercel --prod`; nếu nối repo phải đặt Root Directory = `web`.
+  Quang báo (8/11) đã nối GitHub: push lên `main` là Vercel tự deploy. Dự phòng: `cd web && npx vercel --prod` (Root Directory = `web`).
 
 ## Web demo (`web/`)
 Yêu cầu Quang: giao diện chạy được trên localhost, bấm được mọi nút/luồng.
@@ -78,6 +79,9 @@ Quang chốt (24/10): đưa ý tưởng "2 môi trường ảo tự hủy" vào 
 ## Video demo
 - `demo/VietMinutes-demo.mp4` (2:17, có đoạn hướng dẫn, 1440×900, phụ đề tiếng Việt, không có tiếng, dùng giả lập). Quay lại: bật web + AI service rồi
   `python -I demo/record_demo.py <thư mục tạm> demo/sample.wav demo/VietMinutes-demo.mp4` (Playwright + Chrome máy, ffmpeg của imageio_ffmpeg).
+- Ảnh flow cho report (3/11, Quang yêu cầu cho đội MKT): `demo/anh-flow/` 21 ảnh đánh số, khung đỏ = chỗ bấm, kèm `00_Flow-su-dung_VietMinutes.docx` + `00_GHI-CHU.txt`.
+  Chụp lại: bật web + AI service ở máy (bản Vercel không có AI service → nhật ký bảo mật trống) rồi `python -I demo/capture_flow.py demo/anh-flow demo/sample.wav http://localhost:3000`,
+  sau đó `python -I demo/flow_notes.py demo/anh-flow` (lời ghi chú nằm trong file này).
 
 ## Bẫy
 - Scaffold Next 16 bật `cacheComponents` → build lỗi `usePathname()` ngoài Suspense; đã tắt trong `next.config.ts` (app chạy thuần client).
